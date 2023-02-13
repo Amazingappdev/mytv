@@ -47,7 +47,7 @@
                 android:gravity="end"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/backPlay"
+                    android:id="@+id/Play"
                     android:layout_width="120dp"
                     android:layout_marginEnd="20dp"
                     android:layout_height="100dp"

@@ -1,6 +1,8 @@
 package com.dct.androidexam.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ import org.json.JSONObject;
 public class MoviesDetailsPage extends AppCompatActivity {
 
     TextView header;
-    ImageView imgBack;
+    ImageView imgBack,Play;
     String movieId = "";
     ImageView itemIV, backDropImg;
     TextView itemNameTv, itemOverView;
@@ -52,7 +54,15 @@ public class MoviesDetailsPage extends AppCompatActivity {
         backDropImg = findViewById(R.id.backDropImg);
         itemIV = findViewById(R.id.itemIV);
         itemOverView = findViewById(R.id.itemOverView);
+        Play = findViewById(R.id.Play);
         header.setText("Movies Details");
+
+        Play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),PlayMovies.class));
+            }
+        });
 
     }
 
