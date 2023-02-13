@@ -47,6 +47,7 @@ class MoviesListAdapter (val context: Context,private var moviesListModelArrayLi
 
             val intent = Intent(context, MoviesDetailsPage::class.java)
             intent.putExtra("movieID", moviesListModelArrayList.get(position).movie_id)
+            intent.putExtra("title", moviesListModelArrayList.get(position).title)
            context.startActivity(intent)
         })
     }

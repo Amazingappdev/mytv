@@ -22,7 +22,7 @@ public class MoviesDetailsPage extends AppCompatActivity {
 
     TextView header;
     ImageView imgBack,Play;
-    String movieId = "";
+    String movieId = "",strTitle="";
     ImageView itemIV, backDropImg;
     TextView itemNameTv, itemOverView;
 
@@ -32,6 +32,7 @@ public class MoviesDetailsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_details);
         movieId = String.valueOf(getIntent().getIntExtra("movieID", 0));
+        strTitle = getIntent().getStringExtra("intent");
         init();
         imgBack.setOnClickListener(v -> callPreviousactivity());
         getDetails(movieId);
@@ -60,7 +61,9 @@ public class MoviesDetailsPage extends AppCompatActivity {
         Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),PlayMovies.class));
+                Intent intent = new Intent(getApplicationContext(),PlayMovies.class);
+                intent.putExtra("title",strTitle);
+                startActivity(intent);
             }
         });
 

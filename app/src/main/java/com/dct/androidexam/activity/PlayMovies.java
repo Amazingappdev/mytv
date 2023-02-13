@@ -1,6 +1,7 @@
 package com.dct.androidexam.activity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,8 @@ public class PlayMovies extends AppCompatActivity {
 
     ExoPlayer exoPlayer;
     PlayerView simpleExoPlayer;
+    String title="";
+    TextView txtTitle;
 
     String url = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
     int appNameStringRes = R.string.app_name;
@@ -23,6 +26,7 @@ public class PlayMovies extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_movies);
+        title=getIntent().getStringExtra("title");
 
         init();
 
@@ -49,11 +53,17 @@ public class PlayMovies extends AppCompatActivity {
     private void callPreviousactivity() {
         if (exoPlayer != null) {
             exoPlayer.release();
+            finish();
         }
-        finish();
+        else {
+            finish();
+        }
+
     }
     private void init() {
         simpleExoPlayer = findViewById(R.id.exoplayerView);
+        txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText(title);
 
     }
 
