@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Trending Movies</string>
+    <string name="search">Search</string>
+    <string name="adapterview">adapterView</string>
+    <string name="searches">Search</string>
+    <string name="apiKey">9e0edfd610ab9e4498faca98525b713e</string>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/ligt_gray"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.TrendingMoviesList">
+    <!--on below line we are adding view pager -->
+    <include layout="@layout/back_arrows">
+    </include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@color/purple_500"
+                android:orientation="vertical">
+                <!--on below line we are creating
+                    a simple image view-->
+                <ImageView
+                    android:id="@+id/itemIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:id="@+id/backDropImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:gravity="end"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/backPlay"
+                    android:layout_width="120dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/youtube" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/itemNameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="4dp"
+                android:text="@string/app_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/itemOverView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:padding="4dp"
+                android:text="@string/app_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
